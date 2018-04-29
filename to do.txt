@@ -1,0 +1,4 @@
+get rid of pricing
+rename structure to "benefits"
+blog 
+about
