@@ -1,5 +1,5 @@
 .tiles{    margin-top: 70px;}
-body{     background-color: #d6d6d6;}
+body{     background-color: rgb(238, 238, 238);}
 .banner{  margin-top: 100px;
           padding-top: 100px;}
 .media{margin-left: 100px;}
@@ -11,3 +11,4 @@ body{     background-color: #d6d6d6;}
 nav{margin-bottom: 30px;}
 .active{background-color: #448afc;}
 .indented{margin-left:2em;}
+.learn{color: #0048d8;}
