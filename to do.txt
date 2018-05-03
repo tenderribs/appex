@@ -2,3 +2,5 @@ ask majed about:
 icons for the title
 layout
 dynamic page (switch german to english)
+
+input from chris: copy look and feel of homepage (tiles and shit)
