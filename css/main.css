@@ -12,3 +12,4 @@ nav{margin-bottom: 30px;}
 .active{background-color: #448afc;}
 .indented{margin-left:2em;}
 .learn{color: #0048d8;}
+nav:hover {background-color: #448afc;}
