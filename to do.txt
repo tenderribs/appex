@@ -1,6 +1,3 @@
-ask majed about:
 icons for the title
-layout
+layout (tiles and shit)
 dynamic page (switch german to english)
-
-input from chris: copy look and feel of homepage (tiles and shit)
