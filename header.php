@@ -8,13 +8,10 @@
                         <h3><strong>applied</strong>|experience</h3>
                       </a>
                         <a class="navbar-item has-text-black-ter" href="index.php?page=features">
-                          Features and Benefits
-                        </a>
-                        <a class="navbar-item has-text-black-ter" href="index.php?page=system">
-                          How does it work?
+                          Learn more
                         </a>
                         <a class="navbar-item has-text-black-ter" href="index.php?page=blog">
-                          Blog
+                          Contact & Blog
                         </a>
                     </div>
             </nav>

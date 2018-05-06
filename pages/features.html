@@ -1,49 +1,61 @@
-      <!--Content-->
-          <div class="box">
-              <article class="media" style="padding-top: 45px">
-                <div class="media-content">
-                  <div class="content" >
-                    <h3 style="color: #0039aa">Learn from Experience</h3>
-                    <p style="color: #0039aa">
-                      AppEx is a web-based planning and reporting tool for anyone with coordinative responsibilities in a project. AppEx can be used by individuals or companies.
-                    </p>
-                  </div>
-                </div>
-              </article>
-          </div>
-          <!--Tiles-->
-          <div class="tile is-ancestor">
-              <div class="tile is-5 is-parent">
-                  <!--Features tile-->
-                  <div class="tile is-child box">
-                    one
-                  </div>
-              </div>
-              <div class="tile is-5 is-parent">
-                  <!--Benefits tile-->
-                  <div class="tile is-child box">
-                    one
-                  </div>
-              </div>
-              <div class="tile is-2 is-parent">                
-                  <!-- Right description tile-->
-                  <div class="tile is-child box">
-                    three
-                  </div>
-              </div>
-          </div>
+<div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                    <article class="tile is-child box">
+                        <p class="title">Learn from Experience</p>
+                    </article>
+                    <article class="tile is-child box">
+                        <p class="title">Try it out</p>
 
-              <!--tiles on the bottom row-->
-          <div class="tile is-ancestor">
-              <div class="tile is-4 is-parent">
-                  <div class="tile is-child box">
-                    four
-                  </div>
-              </div>
-              <!-- tile with images-->
-              <div class="tile is-8 is-parent">
-                  <div class="tile is-child box">
-                    five
-                  </div>
-              </div>
-          </div>
+                        <!--Modal try it out-->
+                        <button onclick="myFunction()">Click me</button>
+                        <div class="modal">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                  <header class="modal-card-head">
+                                    <p class="modal-card-title">Modal title</p>
+                                    <button class="delete" aria-label="close"></button>
+                                  </header>
+                                  <section class="modal-card-body">
+                                    <!-- Content ... -->
+                                  </section>
+                                  <footer class="modal-card-foot">
+                                    <button class="button">Exit</button>
+                                  </footer>
+                                </div>
+                              </div>
+                    </article>
+                    </div>
+                    <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Image</p>
+                    </article>
+                    </div>
+                </div>
+
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">About us</p>
+                        <p>Applied Experience started in 2005 in Silicon Valley, CA and provided intranet design and the web-based knowledge management tool Connected Projects to general contractors and owners, several of them large, national firms.</p><br/>
+                        <p>The current iteration of Applied Experience is based in Switzerland and internationally active with its new and vastly improved tool AppEx.</p>
+                    </article>
+                </div>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+              <p class="title">How does it work?</p>
+              <p>• AppEx is a web-based planning and reporting tool for anyone with coordinative responsibilities in a project. AppEx can be used by individuals or companies.
+              <p>• AppEx is experience-based. It allows you plan activities based on the knowledge and experiences gained by you or people in your organization. 
+              <p>• AppEx allows you to record solutions to problems and document the quality of work products upon completion of project phases. 
+              <p>• AppEx shows status maps of projects, making the planning and QC status of projects very visible. 
+          </article>
+        </div>
+</div>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
