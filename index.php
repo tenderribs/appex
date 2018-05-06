@@ -41,12 +41,6 @@
           } else if ($page == 'system') {
             require_once('pages/system.html');
 
-          } else if ($page == 'about') {
-            require_once('pages/about.html');
-
-          } else if ($page == 'test') {
-            require_once('pages/test.html');
-            
           } else if ($page == 'blog') {
             require_once('pages/blog.html');
           }

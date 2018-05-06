@@ -13,14 +13,8 @@
                         <a class="navbar-item has-text-black-ter" href="index.php?page=system">
                           How does it work?
                         </a>
-                        <a class="navbar-item has-text-black-ter" href="index.php?page=test">
-                          Try it out
-                        </a>
                         <a class="navbar-item has-text-black-ter" href="index.php?page=blog">
                           Blog
-                        </a>
-                        <a class="navbar-item has-text-black-ter" href="index.php?page=about">
-                            About
                         </a>
                     </div>
             </nav>
