@@ -28,6 +28,9 @@
                 else if ($page == 'login') {
                     require_once('pages/login.html');
                 }
+                else if ($page == 'register') {
+                    require_once('pages/register.html');
+                }
             ?>
             </div>
         </section>
