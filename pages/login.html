@@ -3,16 +3,19 @@
         <article class="media">
           <div class="media-content">
                 <p class=login>
+                    <p class="title">AppEx Login</p>
                     <form action="login.php">
                         <div class="field">
                                 <div class="control">
-                                  <input class="input is-info" type="text" name="uname" placeholder="Enter Username">
+                                    <label class="label">Username</label>
+                                    <input class="input is-info" type="text" name="uname" placeholder="Enter Username">
                                 </div>
                         </div>
 
                         <div class="field">
-                                <div class="control">
-                                  <input class="input is-info" type="text" name="pword" placeholder="Enter Password">
+                                <div class="control">                                    
+                                    <label class="label">Password</label>
+                                    <input class="input is-info" type="password" name="pword" placeholder="Enter Password">
                                 </div>
                         </div>
                           
@@ -22,7 +25,7 @@
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
 
-                        <a href="register.html" style="float: right;">Not registered yet?</a>
+                        <a href="index.php?page=register" style="float: right;">Not registered yet?</a>
                 </form>
               </p>
             </div>
