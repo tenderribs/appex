@@ -25,6 +25,9 @@
                 } else if ($page == 'blog') {
                     require_once('pages/blog.html');
                 }
+                else if ($page == 'login') {
+                    require_once('pages/login.html');
+                }
             ?>
             </div>
         </section>

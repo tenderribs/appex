@@ -14,5 +14,18 @@
                 Contact & Blog
             </a>
         </div>
-</nav>
-            
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control">
+                        <a class="button" style="background-color: #30a5ff" href="index.php?page=login">
+                    <span>
+                        Login
+                    </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+  </nav>
