@@ -5,7 +5,7 @@
  * Include our MySQL connection.
  * I am trying to open it by signalising with ../ that it is in the folder above
  */
-require ' ../config.php';
+require ' ../../config/config.php';
  
  
 //If the POST var "register" exists (our submit button), then we can
@@ -72,7 +72,7 @@ if(isset($_POST['register'])){
         <article class="media">
           <div class="media-content">
                 <p class=login>
-                    <form action="register.php">                        
+                    <form action="register.php" method="POST">                        
                     <p class="title">AppEx Registration</p>
                         <div class="field">
                                 <div class="control">

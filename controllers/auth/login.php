@@ -1,4 +1,6 @@
 <?php
+require ' ../../config/config.php';
+
 //i still have to get $dbUN and $dbPW from users in order to compare it to the entered username and password
             $msg = '';            
             if (isset($_POST['login']) && !empty($_POST['username']) 
