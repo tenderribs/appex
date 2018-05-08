@@ -4,7 +4,7 @@
           <div class="media-content">
                 <p class=login>
                     <p class="title">AppEx Login</p>
-                    <form action="login.php">
+                    <form action="config/login.php" method="POST">
                         <div class="field">
                                 <div class="control">
                                     <label class="label">Username</label>
@@ -18,16 +18,12 @@
                                     <input class="input is-info" type="password" name="pword" placeholder="Enter Password">
                                 </div>
                         </div>
-                          
-                        <button class="button" type="submit">Login</button>
-                        <label>
-
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                        </label>
-
+                                                  
+                        <button class="button" type="submit">Login</button>                        
+                        <label></label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
                         <a href="index.php?page=register" style="float: right;">Not registered yet?</a>
-                </form>
-              </p>
+                    </form>
+                </p>
             </div>
         </article>
       </div>

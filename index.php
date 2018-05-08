@@ -1,3 +1,8 @@
+<?php
+   ob_start();
+   session_start();
+?>
+<?php include('config/config.php') ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,15 +31,13 @@
                     require_once('pages/blog.html');
                 }
                 else if ($page == 'login') {
-                    require_once('pages/login.html');
+                    require_once('config/login.php');
                 }
                 else if ($page == 'register') {
-                    require_once('pages/register.html');
+                    require_once('config/register.php');
                 }
             ?>
             </div>
         </section>
-
-
     </body>
 </html>
