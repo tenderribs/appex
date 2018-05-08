@@ -31,10 +31,10 @@
                     require_once('pages/blog.html');
                 }
                 else if ($page == 'login') {
-                    require_once('controllers/auth/login.php');
+                    require_once('pages/login.html');
                 }
                 else if ($page == 'register') {
-                    require_once('controllers/auth/register.php');
+                    require_once('pages/register.html');
                 }
             ?>
             </div>

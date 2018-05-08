@@ -5,7 +5,7 @@
  * Include our MySQL connection.
  * I am trying to open it by signalising with ../ that it is in the folder above
  */
-require ' ../../config/config.php';
+require './config/config.php';
  
  
 //If the POST var "register" exists (our submit button), then we can
@@ -66,47 +66,3 @@ if(isset($_POST['register'])){
     
 }
 ?>
-
-<br><br>
-<div class="box" class="marginTop">
-        <article class="media">
-          <div class="media-content">
-                <p class=login>
-                    <form action="register.php" method="POST">                        
-                    <p class="title">AppEx Registration</p>
-                        <div class="field">
-                                <div class="control">
-                                    <label class="label">Username</label>
-                                  <input class="input is-info" type="text" name="username" placeholder="Enter Username">
-                                </div>
-                        </div>
-
-                        <div class="field">
-                                <div class="control">                                                   
-                                    <label class="label">Password</label>
-                                     <input class="input is-info" type="password" name="pword" placeholder="Enter Password">
-                                </div>
-                        </div>                          
-                
-                        <div class="field">
-                                <div class="control">
-                                    <label class="label">Email</label>
-                                  <input class="input is-info" type="text" name="uname" placeholder="Enter Email">
-                                </div>
-                        </div>
-
-                        <div class="field">
-                                <div class="control">
-                                    <label class="label">Confirm Email</label>
-                                  <input class="input is-info" type="text" name="uname" placeholder="Confirm Email">
-                                </div>
-                        </div>
-                        <button class="button" style="background-color: #00c04a" type="submit">Register</button>
-                        <label>
-
-                        <a href="index.php?page=login" style="float: right;">Already Registered?</a>
-                </form>
-              </p>
-            </div>
-        </article>
-      </div>

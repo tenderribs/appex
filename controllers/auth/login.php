@@ -47,32 +47,3 @@ require ' ../../config/config.php';
             return $data;
          }
       ?>
-
-      <div class="box" class="marginTop">
-        <article class="media">
-          <div class="media-content">
-                <p class=login>
-                    <p class="title">AppEx Login</p>
-                    <form action="config/login.php" method="POST">
-                        <div class="field">
-                                <div class="control">
-                                    <label class="label">Username</label>
-                                    <input class="input is-info" type="text" name="uname" placeholder="Enter Username">
-                                </div>
-                        </div>
-
-                        <div class="field">
-                                <div class="control">                                    
-                                    <label class="label">Password</label>
-                                    <input class="input is-info" type="password" name="pword" placeholder="Enter Password">
-                                </div>
-                        </div>
-                                                  
-                        <button class="button" type="submit">Login</button>                        
-                        <label></label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-                        <a href="index.php?page=register" style="float: right;">Not registered yet?</a>
-                    </form>
-                </p>
-            </div>
-        </article>
-      </div>
