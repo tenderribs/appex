@@ -14,6 +14,4 @@ $servername = "localhost";
         {
         echo "Connection failed: " . $e->getMessage();
         }
-
-
 ?>
