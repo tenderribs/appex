@@ -1,16 +1,11 @@
-<?php
- 
+<?php 
 //register.php
  
 /**
- * Include ircmaxell's password_compat library.
- */
-require 'lib/password.php';
- 
-/**
  * Include our MySQL connection.
+ * I am trying to open it by signalising with ../ that it is in the folder above
  */
-require 'connect.php';
+require ' ../config.php';
  
  
 //If the POST var "register" exists (our submit button), then we can
@@ -82,7 +77,7 @@ if(isset($_POST['register'])){
                         <div class="field">
                                 <div class="control">
                                     <label class="label">Username</label>
-                                  <input class="input is-info" type="text" name="uname" placeholder="Enter Username">
+                                  <input class="input is-info" type="text" name="username" placeholder="Enter Username">
                                 </div>
                         </div>
 

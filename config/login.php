@@ -1,4 +1,5 @@
 <?php
+//i still have to get $dbUN and $dbPW from users in order to compare it to the entered username and password
             $msg = '';            
             if (isset($_POST['login']) && !empty($_POST['username']) 
                && !empty($_POST['password'])) {
@@ -9,7 +10,7 @@
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'tutorialspoint';
                   
-                  $msg="Log in to Appex.ch";
+                  $msg="Logged in to Appex.ch";
                }else {
                   $msg = 'Please enter a valid Username or Password';
                }
@@ -36,7 +37,7 @@
             }
          }
          
-         //prevent js injection
+         //prevent js injection by stripping < / and >
          function test_input($data) {
             $data = trim($data);
             $data = stripslashes($data);
