@@ -38,7 +38,7 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC); 
             
         if (isset($row['email'])) {
-            header("Location: /index.php?page=welcome"); /* Redirect browser */
+            start_session($request); /* start the session */
         }
     }
 
@@ -89,13 +89,16 @@
         //If the signup process is successful.
         if($result){
             //What you do here is up to you!
-            header("Location: /index.php?page=welcome"); /* Redirect browser */
-            exit();
+            start_session($request); /* start the session */            
         }
     }
 
     function logout() {
+        session_start();
+        unset($_SESSION['email']);
 
+        session_destroy();
+        header("Location: /index.php?page=login");
     }
 
     function hash_password($password) {
@@ -110,5 +113,15 @@
 
         return  $hashedPassword;
     }
+
+    function start_session($request) {
+        session_start();
+        $_SESSION["authenticated"] = True;
+        $_SESSION["email"] = $request['email'];
+
+        header("Location: /index.php?page=welcome"); /* Redirect browser */
+    }
+
+
 
 ?>

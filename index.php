@@ -37,7 +37,7 @@
                     require_once('pages/register.html');
                 }
                 else if ($page == 'welcome') {
-                    require_once('pages/welcome.html');
+                    require_once('pages/welcome.php');
                 }
             ?>
             </div>

@@ -18,20 +18,18 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="field is-grouped">
-                    <p class="control">
-                        <a class="button" style="background-color: #30a5ff" href="index.php?page=login">
-                    <span>
-                        Login
-                    </span>
-                        </a>
-                    </p>
-                    <p class="control">
-                        <a class="button" style="background-color: #30a5ff" href="index.php?page=register">
-                    <span>
-                        Register
-                    </span>
-                        </a>
-                    </p>
+                    <?php
+                        if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"])) {
+                            require_once('pages/navbar/login_register_buttons.html');
+    
+                        } else {
+                            if ( $_SESSION["authenticated"] == True ) {
+                                require_once('pages/navbar/logout_button.html');
+                            } else {
+                                require_once('pages/navbar/login_register_buttons.html');                                                       
+                            }                           
+                        }
+                    ?>
                 </div>
             </div>
         </div>
