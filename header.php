@@ -19,16 +19,12 @@
             <div class="navbar-item">
                 <div class="field is-grouped">
                     <?php
-                        if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"])) {
+                        if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] == False) {
                             require_once('pages/navbar/login_register_buttons.html');
-    
-                        } else {
-                            if ( $_SESSION["authenticated"] == True ) {
-                                require_once('pages/navbar/logout_button.html');
-                            } else {
-                                require_once('pages/navbar/login_register_buttons.html');                                                       
-                            }                           
+                        } else if ( $_SESSION["authenticated"] == True ) {
+                            require_once('pages/navbar/logout_button.html');
                         }
+
                     ?>
                 </div>
             </div>
