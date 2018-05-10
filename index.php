@@ -17,7 +17,7 @@
             <?php
                 
                 $page = isset($_GET["page"]) ? $_GET["page"] : null;
-                    //page content
+                //page content
                 if ($page == '') {
                     require_once('pages/home.html');
 
@@ -35,6 +35,9 @@
                 }
                 else if ($page == 'register') {
                     require_once('pages/register.html');
+                }
+                else if ($page == 'welcome') {
+                    require_once('pages/welcome.html');
                 }
             ?>
             </div>
