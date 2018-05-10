@@ -115,13 +115,20 @@
     }
 
     function start_session($request) {
+        // php session
+        // hmmmm , hard to explain, its used to store values accros multi requests made by a single user/client
+        // for example when the user logs in we can store his info's such as Name,Email,Role and etc
+        // and at the start of every page that the user need to be Logged in to access that page we can check
+        // the $_SESSION["authenticated"] and if its True then we allow the user request to proceed else we terminate it 
+
         session_start();
         $_SESSION["authenticated"] = True;
+
+        $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");
+
         $_SESSION["email"] = $request['email'];
 
         header("Location: /index.php?page=welcome"); /* Redirect browser */
     }
-
-
 
 ?>
