@@ -1,8 +1,6 @@
 <?php
 // the username.DbName and password are defined in env.config.php file my name jeff
 require_once('env.config.php');
-
-
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$DbName", $username, $password);
         // set the PDO error mode to exception
