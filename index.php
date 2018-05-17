@@ -39,6 +39,9 @@
                 else if ($page == 'welcome') {
                     require_once('pages/welcome.php');
                 }
+                else if ($page == 'admin') {
+                    require_once('controllers/auth/admin.php');
+                }
             ?>
             </div>
         </section>

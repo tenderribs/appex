@@ -10,6 +10,12 @@
                     echo "welcome ".$_SESSION["email"];
                     echo "<br/>";
                     echo "Login date and time : ". $_SESSION["loginDateTime"];
+                    //check if the user is an admin, if so, show it the link to admin tools
+                    if($_SESSION["email"]=="mark@markmarolf.com"){
+                      echo "<br/>";
+                      echo "<br/>";
+                      echo "<a href='index.php?page=admin'>Admin page</a>";
+                    }
                 } else {
                     echo "Please log in or register for further access to all tools";
                 }
