@@ -11,6 +11,9 @@
         case "register":
             register($pdo,$request);
             break;
+        case "edit":
+            edit($pdo,$request);
+            break;
         case "logout":
             logout();
             break;
@@ -90,6 +93,48 @@
         if($result){
             //What you do here is up to you!
             start_session($request); /* start the session */            
+        }
+    }
+    
+    function edit($pdo,$request){
+        //$file = !empty($request['file']) ?$request['file'] : null;
+        $title = !empty($request['title']) ?$request['title'] : null;
+        $text = !empty($request['text']) ?$request['text'] : null;
+
+        // //Construct the SQL statement and prepare it.
+        // $sql = "SELECT COUNT(title) AS num FROM contents WHERE title = :title";
+        // $stmt = $pdo->prepare($sql);
+
+        // //Bind the provided email to our prepared statement.
+        // $stmt->bindValue(':title', $title,PDO::PARAM_STR);
+        
+        // //Execute.
+        // $stmt->execute();
+        
+        // //Fetch the row.
+        // $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // //If the provided username already exists - display error.
+        // if ($row['num'] > 0){
+        //     die('That Title already exists!');
+        // }
+    
+        //Prepare our INSERT statement.
+        //Remember: We are inserting a new row into our users table.
+        $sql = "INSERT INTO contents (title, text) VALUES (:title, :text)";
+        $stmt = $pdo->prepare($sql);
+
+        //Bind our variables.
+
+        $stmt->bindValue(':title', $title,PDO::PARAM_STR);
+        $stmt->bindValue(':text', $text,PDO::PARAM_STR);
+    
+        //Execute the statement and insert the new post.
+        $result = $stmt->execute();
+        
+        //If the process is successful.
+        if($result){
+            echo "added content successfully";           
         }
     }
 
