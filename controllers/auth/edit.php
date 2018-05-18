@@ -6,6 +6,7 @@
         </span>
         <div class="content">
             <form action="controllers/auth/auth.php?method=edit" method="post">
+
                 <!-- <p style="text-align: left;">Upload a file such as an image below to spice up the blog post:</p>
                 <div class="file has-name">
                     <label class="file-label">
@@ -22,7 +23,8 @@
                             </span>
                     </label>
                 </div> -->
-                <br>
+                
+                <br>                
                 <div class="field">
                     <p class="control has-icons-left">
                         <input class="input is-info" type="text" name="title" placeholder="Enter the title please">    

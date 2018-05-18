@@ -35,6 +35,9 @@
         if (isset($row['email'])) {
             start_session($request); /* start the session */
         }
+        else{
+            echo "lol git gud boii wrong password";
+        }
     }
     function register($pdo,$request) {
         $email = !empty($request['email']) ? trim($request['email']) : null;
@@ -82,32 +85,34 @@
     
     function edit($pdo,$request){
         //$file = !empty($request['file']) ?$request['file'] : null;
+
+        $sql = "SELECT COUNT(blog) AS num FROM contents";
+        $stmt = $pdo->prepare($sql);
+
+        //Execute.
+        $stmt->execute();
+        
+        //Fetch the row.
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        //If the provided username already exists - display error.
+        if ($row['num'] >= 0){
+            $blog = $row['num'] + 1;
+        }
+
         $title = !empty($request['title']) ?$request['title'] : null;
         $text = !empty($request['text']) ?$request['text'] : null;
-        // //Construct the SQL statement and prepare it.
-        // $sql = "SELECT COUNT(title) AS num FROM contents WHERE title = :title";
-        // $stmt = $pdo->prepare($sql);
-        // //Bind the provided email to our prepared statement.
-        // $stmt->bindValue(':title', $title,PDO::PARAM_STR);
-        
-        // //Execute.
-        // $stmt->execute();
-        
-        // //Fetch the row.
-        // $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        // //If the provided username already exists - display error.
-        // if ($row['num'] > 0){
-        //     die('That Title already exists!');
-        // }
-    
+        //$created_at = "SELECT NOW() + 0;""
         //Prepare our INSERT statement.
         //Remember: We are inserting a new row into our users table.
-        $sql = "INSERT INTO contents (title, text) VALUES (:title, :text)";
+        $sql = "INSERT INTO contents (title, text, blog, created_at) VALUES (:title, :text, :blog, :created_at)";
         $stmt = $pdo->prepare($sql);
+
         //Bind our variables.
         $stmt->bindValue(':title', $title,PDO::PARAM_STR);
         $stmt->bindValue(':text', $text,PDO::PARAM_STR);
+        $stmt->bindValue(':blog', $blog,PDO::PARAM_INT);        
+        $stmt->bindValue(':created_at', $created_at,PDO::PARAM_INT);
     
         //Execute the statement and insert the new post.
         $result = $stmt->execute();
@@ -121,7 +126,7 @@
             echo "</br>";
             echo "<a href='../../index.php?'>To the Homepage:</a>";
             echo "</br>";
-            echo "<a href='../../index.php?page=Blog'>To the Blog:</a>";           
+            echo "<a href='../../index.php?page=blog'>To the Blog:</a>";           
         }
     }
     function logout() {
@@ -147,8 +152,9 @@
         // the $_SESSION["authenticated"] and if its True then we allow the user request to proceed else we terminate it 
         session_start();
         $_SESSION["authenticated"] = True;
-        $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");
+        $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");        
         $_SESSION["email"] = $request['email'];
+        $_SESSION["role"] = $request['role'];
         header("Location: /index.php?page=welcome"); /* Redirect browser */
     }
 ?>

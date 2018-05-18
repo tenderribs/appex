@@ -24,9 +24,6 @@
                 } else if ($page == 'features') {
                     require_once('pages/features.html');
 
-                } else if ($page == 'system') {
-                    require_once('pages/system.html');
-
                 } else if ($page == 'blog') {
                     require_once('pages/blog.html');
                 }

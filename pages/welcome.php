@@ -11,7 +11,7 @@
                     echo "<br/>";
                     echo "Login date and time : ". $_SESSION["loginDateTime"];
                     //check if the user is an admin, if so, show it the link to admin tools
-                    if($_SESSION["email"]=="mark@markmarolf.com"){
+                    if($_SESSION["email"]=="mark@markmarolf.com" || "chris@markmarolf.com"){
                       echo "<br/>";
                       echo "<br/>";
                       echo "<a href='index.php?page=admin'>Admin page</a>";
