@@ -35,8 +35,8 @@ CREATE TABLE `contents` (
   `place` varchar(190) NOT NULL,
   `blog` tinyint(4) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
-  `updated_at` date NOT NULL,
-  `created_at` int(11) NOT NULL
+  `updated_at` datetime NOT NULL,
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

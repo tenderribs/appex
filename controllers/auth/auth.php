@@ -22,7 +22,7 @@
         $hashedPassword = hash_password($password);
         
         //Construct the SQL statement and prepare it.
-        $sql = "SELECT email FROM users WHERE email = :email AND password = :hashedPassword";
+        $sql = "SELECT id, email FROM users WHERE email = :email AND password = :hashedPassword";
         $stmt = $pdo->prepare($sql);
         //Bind the provided email to our prepared statement.
         $stmt->bindValue(':email', $email,PDO::PARAM_STR);
@@ -33,7 +33,9 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC); 
             
         if (isset($row['email'])) {
-            start_session($request); /* start the session */
+            // var_dump($row);
+            // die();
+            start_session($row); /* start the session */
         }
         else{
             echo "lol git gud boii wrong password";
@@ -78,8 +80,24 @@
         
         //If the signup process is successful.
         if($result){
+
+            // after that user is registered i select his email and id from db
+            // so i can store his ID in sessions and later use it when the user create a content
+            // in create content we can get user_id from session and store content with the user_id (the user that is logged in the creator)
+            //Construct the SQL statement and prepare it.
+            $sql = "SELECT id, email FROM users WHERE email = :email";
+            $stmt = $pdo->prepare($sql);
+            //Bind the provided email to our prepared statement.
+            $stmt->bindValue(':email', $email,PDO::PARAM_STR);
+            //Execute.
+            $stmt->execute();
+            //Fetch the row.
+            $row = $stmt->fetch(PDO::FETCH_ASSOC); 
+
+            //  var_dump($row);
+            //  die();
             //What you do here is up to you!
-            start_session($request); /* start the session */            
+            start_session($row); /* start the session */            
         }
     }
     
@@ -102,17 +120,34 @@
 
         $title = !empty($request['title']) ?$request['title'] : null;
         $text = !empty($request['text']) ?$request['text'] : null;
+       
+        // this is not correct
         //$created_at = "SELECT NOW() + 0;""
+
+        // This is correct way to get current date time and store in a variable 
+         $created_at = date('Y-m-d H:i:s');
+
+        
         //Prepare our INSERT statement.
         //Remember: We are inserting a new row into our users table.
-        $sql = "INSERT INTO contents (title, text, blog, created_at) VALUES (:title, :text, :blog, :created_at)";
+        $sql = "INSERT INTO contents (title, text, blog, created_at, user_id) VALUES (:title, :text, :blog, :created_at, :user_id)";
         $stmt = $pdo->prepare($sql);
 
         //Bind our variables.
         $stmt->bindValue(':title', $title,PDO::PARAM_STR);
         $stmt->bindValue(':text', $text,PDO::PARAM_STR);
         $stmt->bindValue(':blog', $blog,PDO::PARAM_INT);        
-        $stmt->bindValue(':created_at', $created_at,PDO::PARAM_INT);
+        // $stmt->bindValue(':created_at', $created_at,PDO::PARAM_INT);
+        $stmt->bindValue(':created_at', $created_at,PDO::PARAM_STR); // created_at is a string
+        // I have also changed 'updated_at' and 'created_at' fields type from int to datetime
+        // you can do edit tables fields from phpmyadmin, tab structure -> change
+        
+        // we have set the user_id in session after that user logged in or registered 
+        // var_dump($_SESSION);
+        // die();
+        $user_id = isset($_SESSION["user_id"])?$_SESSION["user_id"]:1;
+
+        $stmt->bindValue(':user_id', $user_id,PDO::PARAM_INT);
     
         //Execute the statement and insert the new post.
         $result = $stmt->execute();
@@ -144,7 +179,7 @@
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT, array("salt"=> $salt, "cost" => 12));
         return  $hashedPassword;
     }
-    function start_session($request) {
+    function start_session($user) {
         // php session
         // hmmmm , hard to explain, its used to store values accros multi requests made by a single user/client
         // for example when the user logs in we can store his info's such as Name,Email,Role and etc
@@ -153,8 +188,12 @@
         session_start();
         $_SESSION["authenticated"] = True;
         $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");        
-        $_SESSION["email"] = $request['email'];
-        $_SESSION["role"] = $request['role'];
+        $_SESSION["email"] = $user['email'];
+        $_SESSION["role"] = "nab";
+        $_SESSION["user_id"] = $user['id'];
+        // var_dump($_SESSION);
+        // die();
+
         header("Location: /index.php?page=welcome"); /* Redirect browser */
     }
 ?>
