@@ -39,5 +39,8 @@
             </article>
             </div>
         </div>
-    </div>
+    </div> 
+    <?php 
+    require_once 'blogposts.php';
+    ?>    
     <p class="bottomspaceBlog">

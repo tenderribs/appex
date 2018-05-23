@@ -25,7 +25,7 @@
                     require_once('pages/features.html');
 
                 } else if ($page == 'blog') {
-                    require_once('pages/blog.html');
+                    require_once('pages/blog.php');
                 }
                 else if ($page == 'login') {
                     require_once('pages/login.html');

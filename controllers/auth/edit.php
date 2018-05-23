@@ -7,22 +7,6 @@
         <div class="content">
             <form action="controllers/auth/auth.php?method=edit" method="post">
 
-                <!-- <p style="text-align: left;">Upload a file such as an image below to spice up the blog post:</p>
-                <div class="file has-name">
-                    <label class="file-label">
-                        <input class="file-input" id="fileName" type="file" name="file">
-                            <span class="file-cta">                                
-                                <span class="file-icon">
-                                    <i class="fas fa-upload"></i>
-                                </span>
-                                <span class="file-label">
-                                    Choose a file…
-                                </span>
-                                <span class="file-name" id="fileNameTarget">
-                                </span>
-                            </span>
-                    </label>
-                </div> -->
                 
                 <br>                
                 <div class="field">
@@ -40,25 +24,14 @@
                 </div>
                 <div class="field">
                     <p class="control ">
-                        <button class="button is-success" type="submit">
+                        <a class="button is-success" <a class="button" style="background-color: #30a5ff" href="controllers/auth/blogposts.php?method=new"> type="submit">
                             <span class="icon is-small">
-                                <i class="fa fa-plus"></i>                        
+                                <i class="fa fa-plus"></i>                       
                             </span>
-                        </button>
+                        </a>
                     </p>
-                </div>
+                </div>                
             </form>
         </div>
     </div>
 </div>
-
-<!-- trying to display the filename in the upload box, will finish this some other day
-<script>
-    document.addEventListener('DOMContentLoaded',function() {
-    document.querySelector('input[id="fileName"]').onchange=changeEventHandler;
-},false);
-    function selectFile(){
-        var fileName = document.getElementById("fileName");
-        document.getElementById("fileNameTarget").innerHTML = filename;
-    }
-</script> -->
