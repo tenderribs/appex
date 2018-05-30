@@ -5,9 +5,7 @@
             </br>
         </span>
         <div class="content">
-            <form action="controllers/auth/auth.php?method=edit" method="post">
-
-                
+            <form action="controllers/auth/auth.php?method=new" method="post">
                 <br>                
                 <div class="field">
                     <p class="control has-icons-left">
@@ -24,7 +22,7 @@
                 </div>
                 <div class="field">
                     <p class="control ">
-                        <a class="button is-success" <a class="button" style="background-color: #30a5ff" href="controllers/auth/blogposts.php?method=new"> type="submit">
+                        <a class="button is-success" <a class="button" style="background-color: #30a5ff" href="controllers/auth/auth.php?method=new" type="submit">
                             <span class="icon is-small">
                                 <i class="fa fa-plus"></i>                       
                             </span>

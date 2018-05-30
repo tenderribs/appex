@@ -9,8 +9,8 @@
         case "register":
             register($pdo,$request);
             break;
-        case "edit":
-            edit($pdo,$request);
+        case "new":
+            newPost($pdo,$request);
             break;
         case "logout":
             logout();
@@ -38,7 +38,7 @@
             start_session($row); /* start the session */
         }
         else{
-            echo "lol git gud boii wrong password";
+            echo "wrong password";
         }
     }
     function register($pdo,$request) {
@@ -101,7 +101,7 @@
         }
     }
     
-    function edit($pdo,$request){
+    function newPost($pdo,$request){
         //$file = !empty($request['file']) ?$request['file'] : null;
 
         $sql = "SELECT COUNT(blog) AS num FROM contents";

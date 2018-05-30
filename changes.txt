@@ -1,1 +1,0 @@
-changes: changed the colors of the navbar, they are lighter shades of blue now

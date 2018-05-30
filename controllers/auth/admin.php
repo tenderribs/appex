@@ -10,7 +10,11 @@
                     echo "welcome ".$_SESSION["email"];
                     echo "<br/>";
                     echo "Edit the Blog here.";
-                    require_once('edit.php');
+
+                    $path = "edit.php";
+                    echo "Path : $path";
+                    require_once($path);
+                    
                 } else {
                     echo "Only Admins can access this page.";
                 }
