@@ -45,39 +45,10 @@
 include 'config/config.php';
  
 // include objects
-include_once "objects/blogposts.php";
+include_once "objects/blogpost.php";
+include_once "objects/blog_item.php";
+include_once "objects/blog_image.php";
  
 // connect to database here
-// get database connection
-$database = new Database();
-$db = $database->getConnection();
- 
-// initialize objects
-$product = new Product($db);
-$product_image = new ProductImage($db);
-$cart_item = new CartItem($db);
-
-// read all products in the database
-$stmt=$product->read($from_record_num, $records_per_page);
- 
-// count number of retrieved products
-$num = $stmt->rowCount();
- 
-// if products retrieved were more than zero
-if($num>0){
-    // needed for paging
-    $page_url="products.php?";
-    $total_rows=$product->count();
- 
-    // show products
-    include_once "read_products_template.php";
-}
- 
-// tell the user if there's no products in the database
-else{
-    echo "<div class='col-md-12'>";
-        echo "<div class='alert alert-danger'>No products found.</div>";
-    echo "</div>";
-}
 ?>
     <p class="bottomspaceBlog">
